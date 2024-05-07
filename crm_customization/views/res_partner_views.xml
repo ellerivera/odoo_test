@@ -9,12 +9,21 @@
         <field eval="1" name="priority"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//group/group[2]" position="after">
-                <group name="social_media" string="Social Networks">
-                    <field name="url_facebook" widget="url" placeholder="e.g. https://www.facebook.com/user"/>
-                    <field name="url_twitter" widget="url" placeholder="e.g. https://www.twitter.com/user"/>
-                    <field name="url_linkedin" widget="url" placeholder="e.g. https://www.linkedin.com/user"/>
-                </group>
+            <xpath expr="//page[@name='contact_addresses']" position="after">
+                <page name="social_networks" string="Social Networks">
+                    <group>
+                        <field name="url_facebook" widget="url" placeholder="e.g. https://www.facebook.com/user"
+                               icon="fa-facebook-square"/>
+                    </group>
+                    <group>
+                        <field name="url_twitter" widget="url" placeholder="e.g. https://www.twitter.com/user"
+                               icon="fa-twitter"/>
+                    </group>
+                    <group>
+                        <field name="url_linkedin" widget="url" placeholder="e.g. https://www.linkedin.com/user"
+                               icon="fa-linkedin"/>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
