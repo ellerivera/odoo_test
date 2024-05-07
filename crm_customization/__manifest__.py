@@ -12,7 +12,7 @@
     'depends': ['crm'],
 
     # always loaded
-    'data': [],
+    'data': ['views/res_partner_views.xml'],
 
     # only loaded in demonstration mode
     'demo': [],

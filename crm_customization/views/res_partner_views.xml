@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Add contextual button on partner form view -->
+    <record id="view_partners_form_crm_c" model="ir.ui.view">
+        <field name="name">view.res.partner.form.crm.c_inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+        <field eval="1" name="priority"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group/group[2]" position="after">
+                <group name="social_media" string="Social Networks">
+                    <field name="url_facebook" widget="url" placeholder="e.g. https://www.facebook.com/user"/>
+                    <field name="url_twitter" widget="url" placeholder="e.g. https://www.twitter.com/user"/>
+                    <field name="url_linkedin" widget="url" placeholder="e.g. https://www.linkedin.com/user"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
