@@ -12,7 +12,7 @@
     'depends': ['website'],
 
     # always loaded
-    'data': [],
+    'data': ['views/customers_promotions.xml'],
 
     # only loaded in demonstration mode
     'demo': [],
