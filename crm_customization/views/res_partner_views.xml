@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="/static/src/css/crm.css"?>
-
 <odoo>
 
     <!-- Add contextual button on partner form view -->
@@ -40,6 +38,19 @@
                         <field name="complete_profile"/>
                     </group>
                 </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_search_view" model="ir.ui.view">
+        <field name="name">res.partner.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='type_company']" position="after">
+                <separator/>
+                <filter string="Incomplete Profile" name="incomplete_profile" domain="[('complete_profile', '=', False)]"/>
+                <separator/>
             </xpath>
         </field>
     </record>
