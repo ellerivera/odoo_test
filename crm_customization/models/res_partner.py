@@ -1,4 +1,5 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, api
+from odoo.modules.module import get_module_resource
 
 
 class Partner(models.Model):
@@ -15,3 +16,5 @@ class Partner(models.Model):
         for record in self:
             if record.url_facebook and record.url_twitter and record.url_linkedin:
                 record.complete_profile = True
+            else:
+                record.complete_profile = False

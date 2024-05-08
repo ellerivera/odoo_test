@@ -1,4 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/static/src/css/crm.css"?>
+
 <odoo>
 
     <!-- Add contextual button on partner form view -->
@@ -8,20 +10,34 @@
         <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
         <field eval="1" name="priority"/>
         <field name="arch" type="xml">
-
             <xpath expr="//page[@name='contact_addresses']" position="after">
                 <page name="social_networks" string="Social Networks">
                     <group>
-                        <field name="url_facebook" widget="url" placeholder="e.g. https://www.facebook.com/user"
-                               icon="fa-facebook-square"/>
+                        <group>
+                            <field name="url_facebook" widget="url" placeholder="e.g. https://www.facebook.com/user"/>
+                        </group>
+                        <group>
+                            <i class="fa fa-facebook"></i>
+                        </group>
                     </group>
                     <group>
-                        <field name="url_twitter" widget="url" placeholder="e.g. https://www.twitter.com/user"
-                               icon="fa-twitter"/>
+                        <group>
+                            <field name="url_twitter" widget="url" placeholder="e.g. https://www.twitter.com/user"/>
+                        </group>
+                        <group>
+                            <i class="fa fa-twitter"></i>
+                        </group>
                     </group>
                     <group>
-                        <field name="url_linkedin" widget="url" placeholder="e.g. https://www.linkedin.com/user"
-                               icon="fa-linkedin"/>
+                        <group>
+                            <field name="url_linkedin" widget="url" placeholder="e.g. https://www.linkedin.com/user"/>
+                        </group>
+                        <group>
+                            <i class="fa fa-linkedin"></i>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="complete_profile"/>
                     </group>
                 </page>
             </xpath>
