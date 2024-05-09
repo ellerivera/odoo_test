@@ -8,6 +8,73 @@
                         <div class="container text-center">
                             <h3 class="my-4" data-traslate="true">Customers List</h3>
                             <br/>
+                            <div id="myCollapse" class="accordion" role="tablist">
+                                <div class="card bg-white" data-name="Item" id="item_accordion">
+                                    <div class="card-header">
+                                        <b>Search Filters</b>
+                                    </div>
+                                    <div class="card-body">
+                                        <form role="form" id="form_filter" action="/filter" method="POST">
+                                            <div class="row">
+                                                <input type="hidden" name="csrf_token"
+                                                       t-att-value="request.csrf_token()"></input>
+                                                <div class="form-group col-6 s_website_form_field">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Customer's Name
+                                                        </span>
+                                                    </label>
+                                                    <input type="text" name="name" id="name"
+                                                           class="form-control link-style select2-style"/>
+                                                </div>
+                                                <div class="form-group col-6 s_website_form_field">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Facebook Profile
+                                                        </span>
+                                                    </label>
+                                                    <input type="text" name="url_facebook" id="url_facebook"
+                                                           class="form-control link-style"/>
+                                                </div>
+                                                <div class="form-group col-6 s_website_form_field">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Twitter Profile
+                                                        </span>
+                                                    </label>
+                                                    <input type="text" name="url_twitter" id="url_twitter"
+                                                           class="form-control link-style"/>
+                                                </div>
+                                                <div class="form-group col-6 s_website_form_field">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label"
+                                                           style="width: 200px">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Linkedin Profile
+                                                        </span>
+                                                    </label>
+                                                    <input type="text" name="url_linkedin" id="url_linkedin"
+                                                           class="form-control link-style"/>
+                                                </div>
+                                                <div class="col-12 mb-2 mt-4">
+                                                    <button type="submit" name="filter" value="filter"
+                                                            class="btn btn-primary pull-right mx-2">
+                                                        Filter
+                                                    </button>
+                                                    <button type="submit" name="reset" value="reset"
+                                                            class="btn btn-primary pull-right">
+                                                        Reset
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+
                             <div class="row">
                                 <div class="col-12">
                                     <table id="datatable" class="table table-striped table-bordered"
@@ -15,9 +82,9 @@
                                         <thead>
                                             <tr>
                                                 <th data-traslate="true">Customer's Name</th>
-                                                <th data-traslate="true">Job Position</th>
-                                                <th data-traslate="true">Company name</th>
-                                                <th data-traslate="true">Mail Address</th>
+                                                <th data-traslate="true">Facebook Profile</th>
+                                                <th data-traslate="true">Twitter Profile</th>
+                                                <th data-traslate="true">Linkedin Profile</th>
                                                 <th id="action"></th>
                                             </tr>
                                         </thead>
@@ -27,13 +94,13 @@
                                                     <t t-esc="customer.name" t-att-value="customer.id"/>
                                                 </td>
                                                 <td t-att-value="customer.id">
-                                                    <t t-esc="customer.function" t-att-value="customer.id"/>
+                                                    <t t-esc="customer.url_facebook" t-att-value="customer.id"/>
                                                 </td>
                                                 <td t-att-value="customer.id">
-                                                    <t t-esc="customer.company_id.name" t-att-value="customer.id"/>
+                                                    <t t-esc="customer.url_twitter" t-att-value="customer.id"/>
                                                 </td>
                                                 <td t-att-value="customer.id">
-                                                    <t t-esc="customer.email" t-att-value="customer.id"/>
+                                                    <t t-esc="customer.url_linkedin" t-att-value="customer.id"/>
                                                 </td>
                                                 <td t-att-value="customer.id">
                                                     <t>
