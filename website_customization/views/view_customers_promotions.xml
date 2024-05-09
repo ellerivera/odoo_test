@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="view_customers_promotions" name="Customer Details">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+                            <h2 class="my-4" data-traslate="true">Customer Details</h2>
+                            <div class="shadow mb-5 bg-white">
+                                <form>
+                                    <div class="s_website_form_rows row s_col_no_bgcolor">
+                                        <input type="hidden" name="csrf_token"
+                                               t-att-value="request.csrf_token()"></input>
+                                        <div class="form-group col-6 s_website_form_field"
+                                             data-type="text" data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label">
+                                                    <span class="s_website_form_label_content"
+                                                          data-traslate="true">Customer's name:
+                                                    </span>
+                                                </label>
+                                                <div class="col-form-label col-sm">
+                                                    <span t-esc="customer.name"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6 s_website_form_field" data-type="char"
+                                             data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label">
+                                                    <span class="s_website_form_label_content"
+                                                          data-traslate="true">Job Position:
+                                                    </span>
+                                                </label>
+                                                <div class="col-form-label col-sm">
+                                                    <span t-esc="customer.function"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6 s_website_form_field" data-type="text"
+                                             data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label">
+                                                    <span class="s_website_form_label_content"
+                                                          data-traslate="true">Company name:
+                                                    </span>
+                                                </label>
+                                                <div class="col-form-label col-sm">
+                                                    <span t-esc="customer.company_id.name"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6 s_website_form_field" data-type="text"
+                                             data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label">
+                                                    <span class="s_website_form_label_content"
+                                                          data-traslate="true">Mail Address:
+                                                    </span>
+                                                </label>
+                                                <div class="col-form-label col-sm">
+                                                    <span t-esc="customer.email"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <br/>
+                                            <span class="social">SOCIAL NETWORKS</span>
+                                            <br/>
+                                            <div class="form-group s_website_form_field" data-type="text"
+                                                 data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Facebook Profile:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-form-label col-sm">
+                                                        <span t-esc="customer.url_facebook"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group s_website_form_field" data-type="text"
+                                                 data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Twitter Profile:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-form-label col-sm">
+                                                        <span t-esc="customer.url_twitter"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group s_website_form_field" data-type="text"
+                                                 data-name="Field">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content"
+                                                              data-traslate="true">Linkedin Profile:
+                                                        </span>
+                                                    </label>
+                                                    <div class="col-form-label col-sm">
+                                                        <span t-esc="customer.url_linkedin"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group col-6 s_website_form_field" data-type="text"
+                                             data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label">
+                                                    <span class="s_website_form_label_content"
+                                                          data-traslate="true">Complete Profile:
+                                                    </span>
+                                                </label>
+                                                <div class="col-form-label col-sm">
+                                                    <t t-if="customer.complete_profile">
+                                                        <span>Yes</span>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>No</span>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="clearfix oe_login_buttons my-3 justify-content-end">
+                                    <button onclick="window.location.href='/list_customers'"
+                                            value="back" name="back"
+                                            class="btn btn-secondary pull-left">Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

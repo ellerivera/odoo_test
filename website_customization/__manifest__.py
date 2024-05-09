@@ -12,10 +12,22 @@
     'depends': ['website'],
 
     # always loaded
-    'data': ['views/customers_promotions.xml'],
+    'data': ['views/customers_promotions.xml',
+             'views/request_customers_promotions.xml',
+             'views/view_customers_promotions.xml',
+             ],
 
     # only loaded in demonstration mode
     'demo': [],
+
+    'assets': {
+        'web.assets_frontend': [
+            'website_customization/static/src/css/style.css',
+        ],
+
+        'web.assets_backend': []
+    },
+
     'installable': True,
     'auto_install': False
 }

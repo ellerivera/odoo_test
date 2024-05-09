@@ -1,5 +1,4 @@
 from odoo import models, fields, api
-from odoo.modules.module import get_module_resource
 
 
 class Partner(models.Model):

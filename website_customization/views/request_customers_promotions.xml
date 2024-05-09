@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="request_customers_promotions" name="Customers List">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container text-center">
+                            <h3 class="my-4" data-traslate="true">Customers List</h3>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table id="datatable" class="table table-striped table-bordered"
+                                           cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th data-traslate="true">Customer's Name</th>
+                                                <th data-traslate="true">Job Position</th>
+                                                <th data-traslate="true">Company name</th>
+                                                <th data-traslate="true">Mail Address</th>
+                                                <th id="action"></th>
+                                            </tr>
+                                        </thead>
+                                        <t t-foreach="list_customers_p" t-as="customer">
+                                            <tr>
+                                                <td t-att-value="customer.id">
+                                                    <t t-esc="customer.name" t-att-value="customer.id"/>
+                                                </td>
+                                                <td t-att-value="customer.id">
+                                                    <t t-esc="customer.function" t-att-value="customer.id"/>
+                                                </td>
+                                                <td t-att-value="customer.id">
+                                                    <t t-esc="customer.company_id.name" t-att-value="customer.id"/>
+                                                </td>
+                                                <td t-att-value="customer.id">
+                                                    <t t-esc="customer.email" t-att-value="customer.id"/>
+                                                </td>
+                                                <td t-att-value="customer.id">
+                                                    <t>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <a class="mx-1"
+                                                                   t-attf-href="/view_customer?parameter={{ customer.id }}">
+                                                                    <i class="fa fa-search"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

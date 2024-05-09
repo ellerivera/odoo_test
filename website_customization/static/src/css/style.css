@@ -1,0 +1,21 @@
+.shadow{
+    border-radius: 0.75rem;
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+#datatable th{
+    padding:0.35rem;
+}
+
+#datatable td{
+    padding:0.35rem;
+}
+
+#datatable #action{
+    width:7%;
+}
+
+.social {
+    color: #FFFFFF;
+    background-color: #685563;
+}
