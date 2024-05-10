@@ -1,2 +1,3 @@
 # odoo_test
- Odoo Test by Cuban Engineers
+
+Odoo test for Cuban engineer
